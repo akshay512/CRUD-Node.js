@@ -3,7 +3,9 @@ const app = express();
 const mongoose = require('mongoose');
 require('dotenv/config');
 const postroutes= require('./routes/posts')
+var cors = require('cors')
 const bodyparser= require('body-parser');
+app.use(cors());
 app.use(bodyparser.json());
 app.use('/posts',postroutes)
 
